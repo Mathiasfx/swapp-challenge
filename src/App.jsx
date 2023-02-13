@@ -1,6 +1,6 @@
 import "./App.css";
-import SearchPeople from "./components/people/SearchPeople";
-import PeopleList from "./components/people/PeopleList";
+import SearchPeople from "./components/people/Search/SearchPeople";
+import PeopleList from "./components/people/PeopleList/PeopleList";
 
 function App() {
   return (

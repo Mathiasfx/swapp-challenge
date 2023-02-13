@@ -1,11 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getAll } from "../../services/swpeople.api";
+import { getAll } from "../../services/swService.api";
 
 export const peopleSlice = createSlice({
   name: "peoples",
   initialState: {
     people: [],
-    status: null,    
+    status: null,
   },
   extraReducers: {
     [getAll.pending]: (state) => {
@@ -21,14 +21,13 @@ export const peopleSlice = createSlice({
   },
 
   reducers: {
+    /**Eliminar */
     deletePerson: (state, action) => {
       let data = state.people.filter((item, i) => i !== action.payload);
       state.people = data;
-
-    }
+    },
   },
 });
-
-
+/**Exports */
 export const { deletePerson } = peopleSlice.actions;
 export default peopleSlice.reducer;
