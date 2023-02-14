@@ -12,7 +12,7 @@ Instala la app utilizando `npm Install`
 
 ## 3 - Configuración
 
-renombrar `env.local.example` por `.env.local` y colocar en la propiedad "VITE_APP_API_URL" la url de la Api utilizada para este proyecto
+renombrar `enviroment.local.example` por `.env.local` y colocar en la propiedad "VITE_APP_API_URL" la url de la Api utilizada para este proyecto
 [https://swapi.dev/api/people ](https://swapi.dev/api/people "https://swapi.dev/api/people  ")
 
 ## 3 - Correr App
