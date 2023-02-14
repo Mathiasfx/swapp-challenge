@@ -39,7 +39,7 @@ const PeopleForm = () => {
             toggle();
           })}
         >
-          <ModalHeader toggle={toggle}>Nueva Persona</ModalHeader>
+          <ModalHeader toggle={toggle}>Add New Character</ModalHeader>
           <ModalBody className="form-body">
             <div className="row">
               <label>Name</label>
@@ -62,7 +62,7 @@ const PeopleForm = () => {
                 {...register("height", {
                   required: "Este campo es requerido",
                 })}
-                placeholder="Altura"
+                placeholder="Height"
                 className="form-control"
                 type="number"
               />
@@ -74,7 +74,7 @@ const PeopleForm = () => {
                 {...register("gender", {
                   required: "Este campo es requerido",
                 })}
-                placeholder="Genero"
+                placeholder="Gender"
                 className="form-control"
               />
               <p className="error-input">{errors.gender?.message}</p>
@@ -85,7 +85,7 @@ const PeopleForm = () => {
                 {...register("eye_color", {
                   required: "Este campo es requerido",
                 })}
-                placeholder="Color de ojos"
+                placeholder="Eye color"
                 className="form-control"
               />
               <p className="error-input">{errors.eye_color?.message}</p>

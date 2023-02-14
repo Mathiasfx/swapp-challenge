@@ -10,7 +10,7 @@ const PeopleList = () => {
   const filter = useSelector((state) => state.peoples.filter);
 
   /**Estado de la consulta */
-  const loading = useSelector((state) => state.peoples.status);
+  const status = useSelector((state) => state.peoples.status);
 
   /**llamo la lista ni bien cargo el componente*/
   useEffect(() => {
@@ -21,19 +21,21 @@ const PeopleList = () => {
     /**recorro los resultados usando map  */
     <>
       <div className="people-list">
-        {loading === "loading" ? (
-          <Spinner />
-        ) : loading === "succeeded" ? (
+        {status === "loading" ? (
+          <Spinner color="info" className="m-5">
+            Loading...
+          </Spinner>
+        ) : status === "succeeded" ? (
           peoples.map((person, i) => (
             <CardPeople key={i} person={person} index={i} />
           ))
-        ) : loading === "searching" ? (
+        ) : status === "searching" ? (
           filter.map((person, i) => (
             <CardPeople key={i} person={person} index={i} />
           ))
         ) : null}
       </div>
-      {peoples.length === 0 && loading !== "loading" ? (
+      {peoples.length === 0 && status !== "loading" ? (
         <h5>No personajes para filtrar, agregue uno</h5>
       ) : null}
     </>

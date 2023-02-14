@@ -21,7 +21,7 @@ const CardPeople = ({ person, index }) => {
             {person.eye_color}
           </CardText>
         </div>
-        <Delete index={index} />
+        <Delete index={index} name={person.name} />
       </CardBody>
     </Card>
   );
