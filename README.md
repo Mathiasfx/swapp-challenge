@@ -15,12 +15,12 @@ Instala la app utilizando `npm Install`
 renombrar `enviroment.local.example` por `.env.local` y colocar en la propiedad "VITE_APP_API_URL" la url de la Api utilizada para este proyecto
 [https://swapi.dev/api/people ](https://swapi.dev/api/people "https://swapi.dev/api/people  ")
 
-## 3 - Correr App
+## 4 - Correr App
 
 utiliza el comando `npm run dev`
 
-#Funcionalidades
-###¿Que puedo hacer?
+
+### ¿Que puedo hacer?
 
 - Buscar un Personaje de la lista
 - Agregar un nuevo personaje a la lista
