@@ -19,7 +19,6 @@ renombrar `env.local.example` por `.env.local` y colocar en la propiedad "VITE_A
 
 utiliza el comando `npm run dev`
 
-#Funcionalidades
 
 ###¿Que puedo hacer?
 
