@@ -5,7 +5,7 @@ import { deletePerson } from "../../../redux/people/peopleSlice";
 
 const Delete = ({ index }) => {
   const dispatch = useDispatch();
-  /**Ejecuta la accion de DeletePerson con redux */
+  /**Ejecuta la accion de Eliminar */
   const deleteHandler = (e, index) => {
     e.preventDefault();
     dispatch(deletePerson(index));
@@ -17,7 +17,7 @@ const Delete = ({ index }) => {
         deleteHandler(e, index);
       }}
     >
-      Eliminar
+      Delete
     </Button>
   );
 };

@@ -5,17 +5,27 @@
   text-align: center;
 }
 body {
-  background-color: #f1f1f1;
+  background-color: #e3e6f1;
+  font-family: Arial, Helvetica, sans-serif;
 }
-
-.CardPeople {
-  width: 350px;
+.main-container {
+  width: 100%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.CardPeople-title{
+
+.CardPeople {
+  width: 55%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 1.4rem;
+  box-shadow: 1px 2px 3px 4px rgba(12, 12, 12, 0.062);
+}
+.CardPeople-title {
   font-size: 1.2rem;
   font-weight: bold;
   margin-bottom: 0.5rem;
@@ -23,9 +33,12 @@ body {
 .cardBody {
   width: 100%;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+
+  text-align: start;
 }
 
 .people-list {
@@ -34,9 +47,44 @@ body {
   align-items: center;
   padding: 1rem;
   flex-direction: column;
+  width: 100%;
 }
 
-.Search { 
-  min-width: 300px;
-  max-width: 600px;
+.form-people {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  padding: 1rem;
+  flex-direction: column;
+  width: 100%;
+}
+.form-body {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 0.3rem;
+}
+
+.Search {
+  min-width: 350px;
+  width: 100%;
+  margin-right: 1rem;
+}
+.input-search {
+  border: #1d2a57 0.5px solid;
+  width: 100%;
+  background-color: #ffff;
+  padding: 0.5rem;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+.new-boton {
+  height: 100%;
+}
+.error-input {
+  padding: 0.4rem;
+  color: #b41818;
 }

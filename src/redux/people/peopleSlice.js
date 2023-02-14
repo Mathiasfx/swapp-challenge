@@ -5,29 +5,46 @@ export const peopleSlice = createSlice({
   name: "peoples",
   initialState: {
     people: [],
-    status: null,
+    filter: [],
+    status: "idle",
   },
-  extraReducers: {
-    [getAll.pending]: (state) => {
+  extraReducers: (builder) => {
+    builder.addCase(getAll.pending, (state) => {
       state.status = "loading";
-    },
-    [getAll.fulfilled]: (state, action) => {
+    });
+    builder.addCase(getAll.fulfilled, (state, action) => {
       state.status = "succeeded";
       state.people = action.payload;
-    },
-    [getAll.rejected]: (state, action) => {
+    });
+    builder.addCase(getAll.rejected, (state, action) => {
       state.status = "failed";
-    },
+    });
   },
 
   reducers: {
     /**Eliminar */
     deletePerson: (state, action) => {
       let data = state.people.filter((item, i) => i !== action.payload);
+      /**Actualiza */
       state.people = data;
+      state.filter = data;
+    },
+    /**Agregar */
+    addPerson: (state, action) => {
+      state.people.push(action.payload);
+    },
+    /**Filtrar */
+    filterPeople: (state, action) => {
+      state.filter = state.people.filter((item) => {
+        state.status = "searching";
+        return item.name.toLowerCase().includes(action.payload.toLowerCase());
+      });
+      if (state.filter.length === 0) {
+        state.status = "succeeded";
+      }
     },
   },
 });
 /**Exports */
-export const { deletePerson } = peopleSlice.actions;
+export const { deletePerson, addPerson, filterPeople } = peopleSlice.actions;
 export default peopleSlice.reducer;
